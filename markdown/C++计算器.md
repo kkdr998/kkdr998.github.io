@@ -1,4 +1,4 @@
-`#include <bits/stdc++.h> 
+#include <bits/stdc++.h> 
 using namespace std;
 int main(){
 	long long a,c;
@@ -12,4 +12,4 @@ int main(){
     	case '%':cout<<a%c;break;
     	default:cout<<"Error";break;
 		}
-}`
+}
