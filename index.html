@@ -5,7 +5,31 @@
 <link rel="stylesheet" href="i/i.css">
 <header>
 	<h1><a href="#/home">The stone's story</a></h1>
+	<p>
+		<p id="hitokoto">
+  <a href="#" id="hitokoto_text">获取中...</a>
+</p>
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.querySelector('#hitokoto_text')
+      hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`
+      hitokoto.innerText = data.hitokoto
+    })
+    .catch(console.error)
+</script>
+	</p>
 </header>
+<head>
+	<script>
+    window.onload = function() {
+        var fullscreenBg = document.createElement('div');
+        fullscreenBg.className = 'fullscreen-bg';
+        document.body.appendChild(fullscreenBg);
+    }
+</script>
+
 <section>
 	<xmp>
 	{{#posts}}
@@ -24,7 +48,7 @@
 	<a class="home" href="#/home">🏠 返回首页</a>
 	</xmp>
 </article>
-<footer>✒️ 依托 GitHub Pages 搭建</footer>
+<footer>✒️ 由 空空道人998 搭建</footer>
 <script>
 var
 gitConfig={
